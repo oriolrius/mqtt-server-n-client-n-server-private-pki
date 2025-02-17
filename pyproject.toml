@@ -1,0 +1,15 @@
+[project]
+name = "mqtt-server-n-client-private-pki"
+version = "0.1.0"
+description = "Mosquitto MQTT Broker with Websockets and Self-Signed Certificates and PoC with Python Client with client certificate"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "paho-mqtt>=2.1.0",
+    "python-dotenv>=1.0.1",
+]
+authors = [
+    { name = "Oriol Rius", email = "oriol@joor.net" },
+]
+keywords = ["mqtt", "ssl", "tls", "iot"]
+license = "MIT"
