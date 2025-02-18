@@ -23,21 +23,21 @@ ssl_client_cert:
       --key ${MQTT_CLIENT_KEY} \
       ${MQTT_HOST}:${MQTT_PORT}
 
-mosquitto_pub +ARGS:
+mosquitto_pub:
   mosquitto_pub \
       --cafile ${MQTT_CLIENT_CA} \
       --cert ${MQTT_CLIENT_CERT} \
       --key ${MQTT_CLIENT_KEY} \
       -d -h ${MQTT_HOST} -p ${MQTT_PORT} \
-      -t topic1 -m "message1" {{ ARGS }}
+      -t topic1 -m "message1"
 
-mosquitto_sub +ARGS:
+mosquitto_sub:
   mosquitto_sub \
       --cafile ${MQTT_CLIENT_CA} \
       --cert ${MQTT_CLIENT_CERT} \
       --key ${MQTT_CLIENT_KEY} \
       -d -h ${MQTT_HOST} -p ${MQTT_PORT} \
-      -v -t topic1 {{ ARGS }}
+      -v -t topic1
 
 mqttx_sub:
   {{mqttx-cli}} sub \
